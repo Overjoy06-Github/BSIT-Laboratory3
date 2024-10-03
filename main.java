@@ -4,8 +4,35 @@ import javax.swing.JOptionPane;
 public class Lrtstation {
 
     public static void main(String[] args) {
-        String toStation, fromStation;
+        String toStation, fromStation, currentStationName="";
         fromStation = JOptionPane.showInputDialog(null, "Which station are you currently in? \nUse the following as a guideline: \n\nA. Recto\nB. Legarda\nC. Pureza\nD. V. Mapa\nE. J. Ruiz\nF. Gilmore\nG. Betty Go-Belmonte\nH. Arantea-Cubao\nI. Anonas\nJ. Katipunan\nK. Santolan" ,"Current LRT Station", JOptionPane.INFORMATION_MESSAGE).toLowerCase();
+        if (fromStation.equals("a") || (fromStation.equals("recto")))
+            currentStationName = "Recto";
+        else if (fromStation.equals("b") || (fromStation.equals("legarda")))
+            currentStationName = "Legarda";
+        else if (fromStation.equals("c") || (fromStation.equals("pureza")))
+            currentStationName = "Pureza";
+        else if (fromStation.equals("d") || (fromStation.equals("v. mapa")))
+            currentStationName = "V. Mapa";
+        else if (fromStation.equals("e") || (fromStation.equals("j. ruiz")))
+            currentStationName = "J. Ruiz";
+        else if (fromStation.equals("f") || (fromStation.equals("gilmore")))
+            currentStationName = "Gilmore";
+        else if (fromStation.equals("g") || (fromStation.equals("betty go-belmonte")))
+            currentStationName = "Betty Go-Belmonte";
+        else if (fromStation.equals("h") || (fromStation.equals("arantea-cubao")))
+            currentStationName = "Arantea - Cubao";
+        else if (fromStation.equals("i") || (fromStation.equals("anonas")))
+            currentStationName = "Anonas";
+        else if (fromStation.equals("j") || (fromStation.equals("katipunan")))
+            currentStationName = "Katipunan";
+        else if (fromStation.equals("k") || (fromStation.equals("santolan")))
+            currentStationName = "Santolan";
+        else {
+            JOptionPane.showMessageDialog(null, "Error: Invalid station name.", "Error Message", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
+        JOptionPane.showMessageDialog(null, "You're from "+currentStationName+", where do you want to go?", "LRT Station", JOptionPane.INFORMATION_MESSAGE);
         toStation = JOptionPane.showInputDialog(null, "What station would you like to exit?\nUse the following as a guideline: \n\nA. Recto\nB. Legarda\nC. Pureza\nD. V. Mapa\nE. J. Ruiz\nF. Gilmore\nG. Betty Go-Belmonte\nH. Arantea-Cubao\nI. Anonas\nJ. Katipunan\nK. Santolan" ,"LRT Station Destination", JOptionPane.INFORMATION_MESSAGE).toLowerCase();
         
         if (fromStation.equals(toStation)) {
